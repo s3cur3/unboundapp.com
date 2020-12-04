@@ -7,11 +7,10 @@ body {
 	background-color: #fbfbfb; 
 	font-family: 'Libre Franklin', 'Helvetica Neue', sans-serif;
 	font-size: 18pt;
-	min-width: 380px;
 	text-align: center;
 }
 
-section.content {
+.content {
 	margin: 0 auto;
 }
 
@@ -22,7 +21,7 @@ section.content {
 	background: url('images/la-jolla-web.jpg') no-repeat center bottom;
 	background-size: cover;
 }
-section.header {
+.header {
 	padding-top: 80px;
 	padding-bottom: 80px;
 	background: rgba(0, 0, 0, 0.3);
@@ -30,33 +29,34 @@ section.header {
 	color: #fff;
 }
 
-section.header img {
+.header img {
 	margin: 20px;
 }
 
-section.header h1 {
+.header h1 {
 	-webkit-margin-before: 0.3em;
 	-webkit-margin-after: 0.3em;
 	font-size: 1.3em;
 	font-weight: 200;
 }
 
-section.header p {
+.header p {
 	-webkit-margin-before: 0.75em;
 	-webkit-margin-after: 0.7em;
 	font-size: 0.75em;
 	font-weight: 100;
 }
 
-section.header p.appstore {
+.header p.appstore {
 	font-size: 0.65em;
+	margin: 10px;
 }
 
-section.header a { 
+.header a { 
 	color: white;
 }
 
-section.header div.buttons a {
+.header div.buttons a {
 	display: inline-block;
 	cursor: pointer;
 	padding: 8px 32px;
@@ -69,7 +69,7 @@ section.header div.buttons a {
 	border: 1px solid;
 }
 
-section.header div.buttons a.try {
+.header div.buttons a.try {
 	background: -webkit-linear-gradient(#3f8be2 0%, #3166b0 100%);
 	background: -moz-linear-gradient(#3f8be2 0%, #3166b0 100%);
 	background: -ms-linear-gradient(#3f8be2 0%, #3166b0 100%);
@@ -78,7 +78,7 @@ section.header div.buttons a.try {
 	border-color: #2e68a6 #1b5fa7 #004fa2;
 }
 
-section.header div.buttons a.buy {
+.header div.buttons a.buy {
 	background: -webkit-linear-gradient(#74c937 0%, #67b131 100%);
 	background: -moz-linear-gradient(#74c937 0%, #67b131 100%);
 	background: -ms-linear-gradient(#74c937 0%, #67b131 100%);
@@ -90,11 +90,11 @@ section.header div.buttons a.buy {
 /*************
  * Intro
  *************/
-section.intro {
+.intro {
 	color: #444;
 }
 
-section.intro p {
+.intro p {
 	padding: 30px 20px 40px 20px;
 	max-width: 600px;
 	margin: 0 auto;
@@ -106,11 +106,11 @@ section.intro p {
 	font-weight: 700;
 }
 
-section.intro div.img_container {
-	margin: 0px 50px 0px 50px;
+.intro div.img_container {
+	margin: 0;
 }
 
-section.intro div.img_container img {
+.intro div.img_container img {
 	max-width: 100%;
 	height: auto;
 	vertical-align: middle;
@@ -119,14 +119,14 @@ section.intro div.img_container img {
 /*************
  * Features
  *************/
-section.features {
+.features {
 	background-color: #252525;
-	padding: 40px 20px;
 	color: #CECECE;
 	font-size: 0.75em;
+	padding: 10px 0;
 }
 
-section.features div.inner {
+.features .inner {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
@@ -135,27 +135,31 @@ section.features div.inner {
 	margin: 0 auto;
 }
 
-section.features div.inner div.feature {
+.feature {
 	margin: 20px;
-	width: 180px;
+	width: 100%;
+	max-width: 240px;
 	font-weight: 300;
+}
+.feature p {
+	margin: 0;
 }
 
 /*************
  * Closer
  *************/
- section.closer {
-	padding: 60px 50px;
+ .closer {
+	padding: 60px 10px;
 	color: #ffffff;
 	background: url('images/bg_closer.jpg') no-repeat center bottom;
 	background-size: cover;
 }
 
-section.closer img {
+.closer img {
 	margin: 20px;
 }
 
-section.closer h1 {
+.closer h1 {
 	-webkit-margin-before: 0.5em;
 	-webkit-margin-after: 0.5em;
 	font-size: 1.3em;
@@ -165,12 +169,26 @@ section.closer h1 {
 /*************
  * Footer
  *************/
- section.footer {
-	 background-color: #252525;
-	 padding: 10px 30px;
-	 color: #cecece;
- }
- 
- section.footer p {
-	 font-size: 0.4em;
- }
+.footer {
+	background-color: #252525;
+	padding: 10px 30px;
+	color: #cecece;
+}
+
+.footer p {
+	font-size: 0.4em;
+}
+
+@media (min-width: 600px) {
+	.img_container {
+		margin: 0 50px;
+	}
+
+	.features {
+		padding: 40px 20px;
+	}
+	.feature {
+		max-width: 180px;
+	}
+
+}
