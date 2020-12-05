@@ -40,10 +40,17 @@
 		  </section>
 
 		  <section class="screenshots gallery">
+			  <p>
+				  <label class="toggle-switchy" data-size="lg" data-style="rounded">
+					  Dark Mode
+					  <input checked class="dark-mode" type="checkbox">
+					  <span class="toggle"><span class="switch"></span></span>
+				  </label>
+			  </p>
 			  <div class="row-large">
-				  <a href="images/screenshots/albums-overview@2x.png" class="column-third"><img width="302" height="198" src="images/screenshots/albums-overview-thumb@2x.png" alt="Screenshot of the albums overview screen in Unbound Photo Browser for Mac" title="The album overview screen" /></a>
-				  <a href="images/screenshots/album-photos@2x.png" class="column-third"><img width="302" height="198" src="images/screenshots/album-photos-thumb@2x.png" alt="Screenshot of the individual album view in Unbound, showing the thumbnails of all the images in this folder" title="An individual album view" /></a>
-				  <a href="images/screenshots/single-photo@2x.png" class="column-third"><img width="302" height="198" src="images/screenshots/single-photo-thumb@2x.png" alt="Inspecting an individual photo in Unbound, showing both EXIF information and a map with the image's geolocation" title="Inspecting a single photo, showing both EXIF information and a map with the image's geotag" /></a>
+				  <a href="images/screenshots/albums-overview-dark@2x.png" class="column-third"><img width="302" height="198" src="images/screenshots/albums-overview-dark-thumb@2x.png" alt="Screenshot of the albums overview screen in Unbound Photo Browser for Mac" title="The album overview screen" /></a>
+				  <a href="images/screenshots/album-photos-dark@2x.png" class="column-third"><img width="302" height="198" src="images/screenshots/album-photos-dark-thumb@2x.png" alt="Screenshot of the individual album view in Unbound, showing the thumbnails of all the images in this folder" title="An individual album view" /></a>
+				  <a href="images/screenshots/single-photo-dark@2x.png" class="column-third"><img width="302" height="198" src="images/screenshots/single-photo-dark-thumb@2x.png" alt="Inspecting an individual photo in Unbound, showing both EXIF information and a map with the image's geolocation" title="Inspecting a single photo, showing both EXIF information and a map with the image's geotag" /></a>
 			  </div>
 		  </section>
 
@@ -54,7 +61,14 @@
 			  <p>Unlike other photo managers, Unbound doesn&rsquo;t use some proprietary library that might screw up your data... or be abandoned.</p>
 			  <p>With Unbound, your photos simply live in a plain old folder on your computer, accessible from anywhere. You can use Dropbox or any of a million other cloud syncing tools to back them up and share them, and you can be <em>sure</em> they&rsquo;re actually backed up. Your photos are just files&hellip; what a concept!</p>
 			  <div class="img_container">
-				  <a href="images/single-album@2x.png"><img src="images/single-album@2x.png" width="1169" height="331" /></a>
+				  <div>
+					  <label class="toggle-switchy" data-size="lg" data-style="rounded">
+						  Dark Mode
+						  <input checked class="dark-mode" type="checkbox">
+						  <span class="toggle"><span class="switch"></span></span>
+					  </label>
+				  </div>
+				  <a href="images/screenshots/single-album-transition-dark@2x.png"><img src="images/screenshots/single-album-transition-dark@2x.png" width="1169" height="331" /></a>
 			  </div>
 		  </section>
 
@@ -128,8 +142,37 @@
 	  </script>
 	  <script>
 		  function once() {
-			  var gallery = new SimpleLightbox('.gallery a', {widthRatio: 0.9, fadeSpeed: 200});
-			  var img_container = new SimpleLightbox('.img_container a', {widthRatio: 1});
+			  const gallery = new SimpleLightbox('.gallery a', {widthRatio: 0.9, fadeSpeed: 200});
+			  const img_container = new SimpleLightbox('.img_container a', {widthRatio: 1});
+
+			  const toggles = function() { return document.querySelectorAll('.dark-mode'); };
+			  toggles().forEach(function(checkbox) {
+				  checkbox.onclick = function() {
+					  const wantDark = checkbox.checked;
+					  toggles().forEach(function(t) {
+					  	t.checked = wantDark;
+					  });
+
+					  const dark = ['-dark-thumb@2x.png', '-dark@2x.png'];
+					  const light = ['-light-thumb@2x.png', '-light@2x.png'];
+					  const find = wantDark ? light : dark;
+					  const replace = wantDark ? dark : light;
+					  const doReplacement = function(s) {
+						  for(let i = 0; i < find.length; ++i) {
+							  s = s.replace(find[i], replace[i]);
+						  }
+						  return s;
+					  }
+
+					  // Update all images on the page
+					  document.querySelectorAll('a').forEach(function(link) {
+						  link.href = doReplacement(link.href)
+					  });
+					  document.querySelectorAll('img').forEach(function(img) {
+						  img.src = doReplacement(img.src)
+					  });
+				  };
+			  });
 		  }
 
 		  // jQuery document ready replacement
