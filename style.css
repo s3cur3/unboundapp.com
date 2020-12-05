@@ -38,6 +38,9 @@ ul ul li {
 	list-style-type: circle;
 	margin-bottom: 0.2rem;
 }
+img {
+	max-width: 100%;
+}
 
 /*************
  * Header
@@ -125,7 +128,7 @@ ul ul li {
 /*************
  * Features
  *************/
-.features {
+.features, .screenshots {
 	background-color: #252525;
 	color: #CECECE;
 	font-size: 0.75em;
@@ -192,10 +195,17 @@ ul ul li {
 /*************
  * Utility
  *************/
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto;
+}
 ul.row {
 	padding: 0;
 }
-.column-half {
+.column-half, .column-third {
 	margin: 0 1rem;
 }
 li.column-half {
@@ -243,11 +253,43 @@ li.column-half {
 
 	.row {
 		display: flex;
-		max-width: 800px;
+		flex-wrap: nowrap;
+		max-width: 600px;
 		margin: 0 auto;
 	}
 	.column-half {
 		flex: 50%;
 		max-width: 400px;
+	}
+	.column-third {
+		flex: 33.3%;
+		max-width: 33.3%;
+	}
+
+	.screenshots .row {
+		margin: 0 auto;
+		max-width: 100%;
+		overflow-x: hidden;
+	}
+	.screenshots .row .column-third {
+		flex: 100%;
+		max-width: 100%;
+	}
+}
+@media (min-width: 800px) {
+	.row {
+		max-width: 800px;
+	}
+	.screenshots .row {
+		max-width: 100%;
+	}
+}
+@media (min-width: 1024px) {
+	.screenshots .row {
+		max-width: 1024px;
+	}
+	.screenshots .row .column-third {
+		flex: 33.3%;
+		max-width: 33.3%;
 	}
 }
