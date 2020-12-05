@@ -14,6 +14,21 @@ body {
 	margin: 0 auto;
 }
 
+a {
+	color: #4990E2;
+}
+a:hover {
+	color: #53A3FF;
+}
+a:visited {
+	color: #9A68A0;
+}
+a:visited:hover {
+	color: #D18DD9;
+}
+ul {
+	padding: 0 0 0 24px;
+}
 ul li {
 	line-height: 1.5rem;
 	list-style-type: disc;
@@ -62,39 +77,8 @@ ul ul li {
 	margin: 10px;
 }
 
-.header a { 
+.header a {
 	color: white;
-}
-
-.header div.buttons a {
-	display: inline-block;
-	cursor: pointer;
-	padding: 8px 32px;
-	margin: 16px;
-	font-size: 0.8em;
-	text-decoration: none;
-	color: #fff !important;
-	text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.22);
-	border-radius: 4px;
-	border: 1px solid;
-}
-
-.header div.buttons a.try {
-	background: -webkit-linear-gradient(#3f8be2 0%, #3166b0 100%);
-	background: -moz-linear-gradient(#3f8be2 0%, #3166b0 100%);
-	background: -ms-linear-gradient(#3f8be2 0%, #3166b0 100%);
-	background: -o-linear-gradient(#3f8be2 0%, #3166b0 100%);
-	background: linear-gradient(#3f8be2 0%, #3166b0 100%);
-	border-color: #2e68a6 #1b5fa7 #004fa2;
-}
-
-.header div.buttons a.buy {
-	background: -webkit-linear-gradient(#74c937 0%, #67b131 100%);
-	background: -moz-linear-gradient(#74c937 0%, #67b131 100%);
-	background: -ms-linear-gradient(#74c937 0%, #67b131 100%);
-	background: -o-linear-gradient(#74c937 0%, #67b131 100%);
-	background: linear-gradient(#74c937 0%, #67b131 100%);
-	border-color: #60a62e #519f18 #409701;
 }
 
 /*************
@@ -104,19 +88,31 @@ ul ul li {
 	color: #444;
 }
 
+.intro > * {
+	padding: 0 2rem;
+}
+
 .intro p {
-	padding: 30px 20px 40px 20px;
+	margin: 0 auto 2rem;
 	max-width: 600px;
-	margin: 0 auto;
-	font-size: 0.75em;
+	font-size: 1.1rem;
+	line-height: 1.8rem;
 	font-weight: 300;
+	text-align: left;
 }
 
-* > strong, strong {
-	font-weight: 700;
+
+.intro h2, .intro h3 {
+	font-size: 2rem;
+	margin: 2.4rem auto 0.6rem;
+}
+.intro h3 {
+	text-align: left;
+	max-width: 600px;
 }
 
-.intro div.img_container {
+
+.intro .img_container {
 	margin: 0;
 }
 
@@ -156,6 +152,23 @@ ul ul li {
 }
 
 /*************
+ * Changelog
+ *************/
+.changelog li {
+	text-align: left;
+	font-size: 1.1rem;
+	line-height: 1.8rem;
+}
+.changelog > p {
+	padding: 0 2rem;
+	font-size: 1.3rem;
+	line-height: 1.8rem;
+}
+.changelog h3 {
+	margin-bottom: 1em;
+}
+
+/*************
  * Closer
  *************/
  .closer {
@@ -169,11 +182,27 @@ ul ul li {
 	margin: 20px;
 }
 
-.closer h1 {
+.closer h2 {
 	-webkit-margin-before: 0.5em;
 	-webkit-margin-after: 0.5em;
 	font-size: 1.3em;
 	font-weight: 200;
+}
+
+/*************
+ * Utility
+ *************/
+ul.row {
+	padding: 0;
+}
+.column-half {
+	margin: 0 1rem;
+}
+li.column-half {
+	list-style-type: none;
+}
+.left-align {
+	text-align: left;
 }
 
 /*************
@@ -212,4 +241,13 @@ ul ul li {
 		max-width: 180px;
 	}
 
+	.row {
+		display: flex;
+		max-width: 800px;
+		margin: 0 auto;
+	}
+	.column-half {
+		flex: 50%;
+		max-width: 400px;
+	}
 }
