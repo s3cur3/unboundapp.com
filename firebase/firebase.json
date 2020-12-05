@@ -1,0 +1,19 @@
+{
+  "hosting": {
+	"public": "public",
+
+	"ignore": [
+	  "firebase.json",
+	  "**/.*",
+	  "**/node_modules/**"
+	],
+
+	"redirects": [{
+	  "source": "*",
+	  "destination": "https://www.unboundapp.com",
+	  "type": 301
+	}],
+
+	"appAssociation": "AUTO"
+  }
+}
