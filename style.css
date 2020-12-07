@@ -7,6 +7,7 @@ body {
 	background-color: #fbfbfb; 
 	font-family: 'Libre Franklin', 'Helvetica Neue', sans-serif;
 	font-size: 18pt;
+	line-height: 1.6rem;
 	text-align: center;
 }
 
@@ -228,6 +229,10 @@ li.column-half {
 	margin: 0 auto;
 	font-size: 1rem;
 }
+.right-img {
+	float: right;
+	margin: 0 0 1rem 1rem;
+}
 
 /*************
  * Footer
@@ -239,7 +244,7 @@ li.column-half {
 }
 
 .footer p {
-	font-size: 0.4em;
+	font-size: 0.6em;
 }
 
 @media (min-width: 600px) {
