@@ -161,17 +161,24 @@ img {
 /*************
  * Changelog
  *************/
+.changelog div.row p {
+	font-size: 0.75em;
+	text-align: left;
+}
+
 .changelog li {
 	text-align: left;
 	font-size: 1.1rem;
 	line-height: 1.8rem;
 }
-.changelog > p {
-	padding: 0 2rem;
+.changelog li > p {
 	font-size: 1.3rem;
 	line-height: 1.8rem;
 }
 .changelog h3 {
+	margin-bottom: 0.5rem;
+}
+.changelog ul.row h3 {
 	margin-bottom: 1em;
 }
 
@@ -212,12 +219,18 @@ ul.row {
 .column-half, .column-third {
 	margin: 0 1rem;
 }
-li.column-half {
+ul.row > li, ul.no-style > li {
 	list-style-type: none;
 }
 .left-align {
 	text-align: left;
 }
+.mb0 { margin-bottom: 0; }
+.mt0 { margin-top: 0; }
+.mb-half-rem { margin-bottom: 0.5rem; }
+.mt-half-rem { margin-top: 0.5rem; }
+.mb1rem { margin-bottom: 1rem; }
+.mt1rem { margin-top: 1rem; }
 
 /*************
  * Normal pages
