@@ -240,6 +240,22 @@
 					  });
 				  };
 			  });
+
+			  // Preloading: Load the lightbox thumbs in light mode too, and also their hrefs (and the href light version!)
+			  document.querySelectorAll('img').forEach(function(img) {
+				  if(img.src.endsWith('-dark-thumb@2x.png')) {
+					  let thumbLight = new Image();
+					  thumbLight.src = img.src.replace('-dark-thumb@2x.png', '-light-thumb@2x.png');
+				  }
+			  });
+			  document.querySelectorAll('a').forEach(function(link) {
+				  if(link.href.endsWith('-dark@2x.png')) {
+					  let imgDark = new Image();
+					  imgDark.src = link.href;
+					  let imgLight = new Image();
+					  imgLight.src = link.href.replace('-dark@2x.png', '-light@2x.png');
+				  }
+			  });
 		  }
 
 		  // jQuery document ready replacement
