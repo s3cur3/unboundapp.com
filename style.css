@@ -254,6 +254,9 @@ ul.row > li, ul.no-style > li {
 	float: right;
 	margin: 0 0 1rem 1rem;
 }
+.post-date {
+	margin-top: 0;
+}
 
 /*************
  * Footer
