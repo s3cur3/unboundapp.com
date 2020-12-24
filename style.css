@@ -98,6 +98,35 @@ img {
 }
 
 /*************
+ * Nav
+ *************/
+nav {
+	color: #fff;
+	font-size: 1.1rem;
+}
+nav ul {
+	margin: 0;
+	padding: 0;
+}
+nav li {
+	display: inline-block;
+	margin: 0.5rem 0 0.5rem 0.5rem;
+}
+nav li:after {
+	content: '>';
+	margin-left: 0.5rem;
+}
+nav li:last-child:after {
+	content: '';
+}
+.image-aligned {
+	display: flex;
+	align-items: center;
+	margin-left: 1rem;
+	padding-top: 1rem;
+}
+
+/*************
  * Intro
  *************/
 .intro {
