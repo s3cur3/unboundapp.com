@@ -120,7 +120,7 @@ nav li:last-child:after {
 	content: '';
 }
 nav a, nav a:visited {
-	color: #53A3FF;
+	color: #fff;
 }
 nav a:hover, nav a:visited:hover {
 	color: #66B0FF;
