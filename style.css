@@ -119,6 +119,12 @@ nav li:after {
 nav li:last-child:after {
 	content: '';
 }
+nav a, nav a:visited {
+	color: #53A3FF;
+}
+nav a:hover, nav a:visited:hover {
+	color: #66B0FF;
+}
 .image-aligned {
 	display: flex;
 	align-items: center;
